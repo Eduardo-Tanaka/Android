@@ -1,8 +1,11 @@
 package br.com.eduardotanaka.maximatech.data.room.converter
 
 import androidx.room.TypeConverter
+import br.com.eduardotanaka.maximatech.data.model.entity.Contato
 import br.com.eduardotanaka.maximatech.util.DateTimeUtil.defaultFormatter
 import br.com.eduardotanaka.maximatech.util.DateTimeUtil.localDateTimeFormatter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
 
@@ -30,5 +33,17 @@ class Converters {
         return value?.let {
             return localDateTimeFormatter.parse(value, LocalDateTime::from)
         }
+    }
+
+    @TypeConverter
+    fun fromListOfContatos(offers: List<Contato>?): String? {
+        return offers?.let {
+            return Gson().toJson(it, object : TypeToken<List<Contato>>() {}.type)
+        }
+    }
+
+    @TypeConverter
+    fun toListOfContatoss(offersListStringBuffer: String?): List<Contato>? {
+        return Gson().fromJson(offersListStringBuffer, object : TypeToken<List<Contato>>() {}.type)
     }
 }

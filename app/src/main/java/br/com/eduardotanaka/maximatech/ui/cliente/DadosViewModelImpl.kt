@@ -1,34 +1,32 @@
-package br.com.eduardotanaka.maximatech.ui
+package br.com.eduardotanaka.maximatech.ui.cliente
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.eduardotanaka.maximatech.R
-import br.com.eduardotanaka.maximatech.data.model.entity.RetrofitTeste
-import br.com.eduardotanaka.maximatech.data.repository.RetrofitTesteRepository
+import br.com.eduardotanaka.maximatech.data.model.entity.Cliente
+import br.com.eduardotanaka.maximatech.data.repository.ClienteRepository
 import br.com.eduardotanaka.maximatech.ui.base.BaseViewModel
 import br.com.eduardotanaka.maximatech.ui.base.StatefulResource
 import javax.inject.Inject
 
-class MainActivityViewModelImpl @Inject constructor(
-    private val retrofitTesteRepository: RetrofitTesteRepository,
-) : BaseViewModel(), MainActivityViewModel {
+class DadosViewModelImpl @Inject constructor(
+    private val clienteRepository: ClienteRepository
+) : BaseViewModel(), DadosViewModel {
 
-    private val mutableRetrofitTesteList: MutableLiveData<StatefulResource<List<RetrofitTeste>>> =
-        MutableLiveData()
-    override val retrofitTesteList: LiveData<StatefulResource<List<RetrofitTeste>>> =
-        mutableRetrofitTesteList
+    private val mutableCliente: MutableLiveData<StatefulResource<Cliente>> = MutableLiveData()
+    override val cliente: LiveData<StatefulResource<Cliente>> = mutableCliente
 
-    override fun getAll() {
+    override fun getCliente(id: Int) {
         launch {
-            mutableRetrofitTesteList.value = StatefulResource.with(StatefulResource.State.LOADING)
-            val resource = retrofitTesteRepository.getAll()
+            mutableCliente.value = StatefulResource.with(StatefulResource.State.LOADING)
+            val resource = clienteRepository.getCliente(id)
             when {
                 resource.hasData() -> {
                     //return the value
-                    mutableRetrofitTesteList.value = StatefulResource.success(resource)
+                    mutableCliente.value = StatefulResource.success(resource)
                 }
                 resource.isNetworkIssue() -> {
-                    mutableRetrofitTesteList.value = StatefulResource<List<RetrofitTeste>>()
+                    mutableCliente.value = StatefulResource<Cliente>()
                         .apply {
                             setMessage(R.string.no_network_connection)
                             setState(StatefulResource.State.ERROR_NETWORK)
@@ -36,19 +34,19 @@ class MainActivityViewModelImpl @Inject constructor(
                 }
                 resource.isApiIssue() -> //TODO 4xx isn't necessarily a service error, expand this to sniff http code before saying service error
                     if (resource.response?.code() == 404) {
-                        mutableRetrofitTesteList.value = StatefulResource<List<RetrofitTeste>>()
+                        mutableCliente.value = StatefulResource<Cliente>()
                             .apply {
                                 setState(StatefulResource.State.ERROR_API)
                                 setMessage(R.string.not_found)
                             }
                     } else {
-                        mutableRetrofitTesteList.value = StatefulResource<List<RetrofitTeste>>()
+                        mutableCliente.value = StatefulResource<Cliente>()
                             .apply {
                                 setState(StatefulResource.State.ERROR_API)
                                 setMessage(R.string.service_error)
                             }
                     }
-                else -> mutableRetrofitTesteList.value = StatefulResource<List<RetrofitTeste>>()
+                else -> mutableCliente.value = StatefulResource<Cliente>()
                     .apply {
                         setState(StatefulResource.State.SUCCESS)
                         setMessage(R.string.not_found)
@@ -56,5 +54,4 @@ class MainActivityViewModelImpl @Inject constructor(
             }
         }
     }
-
 }
