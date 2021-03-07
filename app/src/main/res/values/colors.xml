@@ -19,7 +19,7 @@
     <color name="bottom_inactive">#186096</color> <!-- Ícone e texto inativos do bottom - #95B6CF (azul claro) -->
 
     <!-- Splash -->
-    <color name="splash"></color> <!-- Fundo gradiente - de #186096 (azul mais claro) para #053F6A (azul mais escuro) -->
+    <color name="splash">#186096</color> <!-- Fundo gradiente - de #186096 (azul mais claro) para #053F6A (azul mais escuro) -->
 
     <!-- Menu Principal -->
     <color name="buttons">#00386C</color> <!-- Ícones dos botões - #00386C -->
@@ -59,7 +59,7 @@
     <color name="order_cut">#FF9900</color> <!-- Pedido sofreu corte - #FF9900 (amarelo) -->
     <color name="order_missing">#BF595F</color> <!-- Pedido com falta - #BF595F (rosa) -->
     <color name="order_canceled">#E40613</color> <!-- Pedido cancelado no ERP - #E40613 (vermelho) -->
-    <color name="order_returned">##186096</color> <!-- Pedido com devolução - #186096 (azul) -->
+    <color name="order_returned">#186096</color> <!-- Pedido com devolução - #186096 (azul) -->
     <color name="order_telemarketing">#64863B</color> <!-- Pedido feito pelo telemarketing - #64863B (verde) -->
 
     <!-- Alvarás -->
