@@ -7,4 +7,62 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Geral -->
+    <color name="background">#FFFFFF</color> <!-- Fundo da tela - #FFFFFF (cinza claro) -->
+    <color name="toolbar">#186096</color> <!-- Toolbar - #186096 (azul mais claro) -->
+    <color name="status_bar">#00386C</color> <!-- Status bar - #00386C (azul mais escuro) -->
+    <color name="background_cards">#F1F1F1</color> <!-- Fundo da tela que tiver cards - #F1F1F1 (cinza) -->
+    <color name="background_card">#FFFFFF</color> <!-- Fundo dos cards - #FFFFFF (branco) -->
+    <color name="bottom_navigation">#186096</color> <!-- Bottom navigation - #186096 -->
+    <color name="bottom_active">#FFFFFF</color> <!-- Ícone e texto ativos do bottom - #FFFFFF -->
+    <color name="bottom_inactive">#186096</color> <!-- Ícone e texto inativos do bottom - #95B6CF (azul claro) -->
+
+    <!-- Splash -->
+    <color name="splash"></color> <!-- Fundo gradiente - de #186096 (azul mais claro) para #053F6A (azul mais escuro) -->
+
+    <!-- Menu Principal -->
+    <color name="buttons">#00386C</color> <!-- Ícones dos botões - #00386C -->
+    <color name="button_text">#232323</color> <!-- Textos dos botões - #232323 -->
+    <color name="connection_status">#727272</color> <!-- Status de conexão - #727272 (texto e ícones) -->
+
+    <!-- Dados Cliente -->
+    <color name="text">#000000</color> <!-- Textos - #000000 -->
+    <color name="text_label">#95989A</color> <!-- Labels dos textos - #95989A -->
+    <color name="razao_social">#606060</color> <!-- Razão social - #606060 -->
+    <color name="button_phone">#186096</color> <!-- Botão de telefone - #186096 -->
+    <color name="button_email">#C1392B</color> <!-- Botão de e-mail - #C1392B -->
+    <color name="button_status">#638735</color> <!-- Botão de Verificar status - #638735 (verde) -->
+
+    <!-- Histórico de pedidos
+    Textos - #000000 (preto)
+    Labels dos textos - #95989A -->
+
+    <!-- Status dos pedidos -->
+    <color name="processing"> #95989A</color> <!-- Em processamento por parte do FV - #95989A (cinza claro) -->
+    <color name="refused">#FF9900</color> <!-- Pedido recusado pelo ERP - #FF9900 (amarelo) -->
+    <color name="pendent">#606060</color> <!-- Pendente - #606060 (cinza) -->
+    <color name="blocked">#3557AA</color> <!-- Bloqueado - #3557AA (roxo) -->
+    <color name="clear">#186096</color> <!-- Liberado - #186096 (azul) -->
+    <color name="mounted">#7FAA33</color> <!-- Montado - #7FAA33 (verde claro) -->
+    <color name="billed">#64863B</color> <!-- Faturado - #64863B (verde escuro) -->
+    <color name="canceled">#E40613</color> <!-- Cancelado - #E40613 (vermelho) -->
+    <color name="budget">#2D3E4E</color> <!-- Orçamento - #2D3E4E (cinza escuro) -->
+
+    <!-- Tipos de crítica -->
+    <color name="waiting">#757575</color> <!-- Aguardando retorno do ERP - #757575 (cinza) -->
+    <color name="success">#64863B</color> <!-- Sucesso - #64863B (verde) -->
+    <color name="parcial_failure">#FF9900</color> <!-- Falha parcial - #FF9900 (amarelo) -->
+    <color name="total_failure">#E40613</color> <!-- Falha total- #E40613 (vermelho) -->
+
+    <!-- Legendas -->
+    <color name="order_cut">#FF9900</color> <!-- Pedido sofreu corte - #FF9900 (amarelo) -->
+    <color name="order_missing">#BF595F</color> <!-- Pedido com falta - #BF595F (rosa) -->
+    <color name="order_canceled">#E40613</color> <!-- Pedido cancelado no ERP - #E40613 (vermelho) -->
+    <color name="order_returned">##186096</color> <!-- Pedido com devolução - #186096 (azul) -->
+    <color name="order_telemarketing">#64863B</color> <!-- Pedido feito pelo telemarketing - #64863B (verde) -->
+
+    <!-- Alvarás -->
+    <color name="title">#3E3E3E</color> <!-- Título - #3E3E3E (cinza escuro) -->
+    <color name="subtitle">#3E3E3E</color> <!-- Subtítulo - #3E3E3E (cinza escuro) -->
 </resources>
