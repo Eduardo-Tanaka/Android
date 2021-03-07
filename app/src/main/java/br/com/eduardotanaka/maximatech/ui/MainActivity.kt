@@ -1,15 +1,16 @@
 package br.com.eduardotanaka.maximatech.ui
 
+import android.content.Context
+import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
-import androidx.activity.viewModels
+import br.com.eduardotanaka.maximatech.R
 import br.com.eduardotanaka.maximatech.databinding.ActivityMainBinding
 import br.com.eduardotanaka.maximatech.ui.base.BaseActivity
-import br.com.eduardotanaka.maximatech.ui.base.StatefulResource
-import timber.log.Timber
 
 class MainActivity : BaseActivity() {
 
-    private val viewModel by viewModels<MainActivityViewModelImpl> { factory }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +19,38 @@ class MainActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.textView.text = "view binding"
+        val list = listOf(
+            Card("ic_maxima_pessoas", "Cliente"),
+            Card("ic_maxima_pedido", "Pedidos"),
+            Card("ic_maxima_resumo_vendas", "Resumo de Vendas"),
+            Card("ic_maxima_ferramentas", "Ferramentas")
+        )
+        val adapter = MainActivityAdapter(list, this)
+        binding.rvCards.adapter = adapter
+        adapter.onItemSelectedListener = object :
+            MainActivityAdapter.OnItemSelectedListener {
+            override fun onCardClicked(
+                card: Card
+            ) {
+                val intent = Intent(this@MainActivity, MainActivity::class.java)
+                //intent.putExtra(ExtraKey.PRODUCT.toString(), card)
 
-        viewModel.getAll()
-        viewModel.retrofitTesteList.observe(this, {
-            if (it.state == StatefulResource.State.SUCCESS && it.hasData()) {
-                Timber.d(it.resource?.data?.toString())
+                startActivity(intent)
             }
-        })
+        }
+
+        val pInfo = this.packageManager.getPackageInfo(this.packageName, 0)
+        binding.version.text = pInfo.versionName
+
+        // https://developer.android.com/training/monitoring-device-state/connectivity-status-type
+        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+        val isConnected = activeNetwork?.isConnectedOrConnecting == true
+
+        if (isConnected) {
+            binding.imageNetwork.setImageDrawable(getDrawable(R.drawable.ic_maxima_nuvem_conectado))
+        } else {
+            binding.imageNetwork.setImageDrawable(getDrawable(R.drawable.ic_maxima_nuvem_desconectado))
+        }
     }
 }
