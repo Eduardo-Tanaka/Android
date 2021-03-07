@@ -6,26 +6,449 @@
     android:layout_height="match_parent"
     tools:context=".ui.cliente.DadosFragment">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_marginTop="400dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    <!-- TODO: Update blank fragment layout -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp">
 
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/card_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Dados do cliente"
+                        android:textColor="@color/text"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/codigo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/empresa"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/razao_social"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/codigo"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cpf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="CPF:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/empresa" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cpf_numero"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cpf"
+                        app:layout_constraintTop_toBottomOf="@+id/empresa"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cnpj"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="CNPJ:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cpf" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cnpj_numero"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cnpj"
+                        app:layout_constraintTop_toBottomOf="@+id/cpf"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ramo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Ramo de atividade:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cnpj" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ramo_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ramo"
+                        app:layout_constraintTop_toBottomOf="@+id/cnpj"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/endereco"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Endereço:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ramo" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/endereco_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/endereco"
+                        app:layout_constraintTop_toBottomOf="@+id/ramo"
+                        tools:text="Dados do cliente" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_contato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_cliente">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/contato"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Contatos"
+                        android:textColor="@color/text"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/contato" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nome"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider2"
+                        tools:text="Gean Delon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/telefone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Telefone:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/telefone_numero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintStart_toEndOf="@+id/telefone"
+                        app:layout_constraintTop_toBottomOf="@+id/nome"
+                        tools:text="3333-3365" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_maxima_telefone"
+                        app:layout_constraintStart_toEndOf="@+id/telefone_numero"
+                        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/celular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Celular:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/telefone" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/celular_numero"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintStart_toEndOf="@+id/celular"
+                        app:layout_constraintTop_toBottomOf="@+id/telefone"
+                        tools:text="(62) 98888-9888" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_maxima_telefone"
+                        app:layout_constraintStart_toEndOf="@+id/celular_numero"
+                        app:layout_constraintTop_toBottomOf="@+id/telefone" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="E-mail:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/celular" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/email_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintStart_toEndOf="@+id/email"
+                        app:layout_constraintTop_toBottomOf="@+id/celular"
+                        tools:text="gean.paiva@maximasistemas.com.br" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_maxima_email"
+                        app:layout_constraintStart_toEndOf="@+id/email_desc"
+                        app:layout_constraintTop_toBottomOf="@+id/celular" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/data_nasc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Data Nasc.:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/data_nasc_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/data_nasc"
+                        app:layout_constraintTop_toBottomOf="@+id/email"
+                        tools:text="1992-12-11" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/conjuge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Cônjuge:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/data_nasc" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/conjuge_nome"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/conjuge"
+                        app:layout_constraintTop_toBottomOf="@+id/data_nasc"
+                        tools:text="conjuge" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/data_nasc_conj"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Data Nasc. Cônjuge:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/conjuge" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/data_nasc_conj_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/data_nasc_conj"
+                        app:layout_constraintTop_toBottomOf="@+id/conjuge"
+                        tools:text="Dados do cliente" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tipo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Tipo:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/data_nasc_conj" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tipo_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tipo"
+                        app:layout_constraintTop_toBottomOf="@+id/data_nasc_conj"
+                        tools:text="Sócio" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Time:"
+                        android:textColor="@color/text_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tipo" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/time_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/time"
+                        app:layout_constraintTop_toBottomOf="@+id/tipo"
+                        tools:text="Flamengo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/button_status"
+                android:padding="12dp"
+                android:text="Verificar status do cliente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_contato" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>
