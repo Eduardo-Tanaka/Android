@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_menu_cliente"
+        android:enabled="true"
+        android:icon="@drawable/ic_maxima_pessoa_ativo"
+        android:title="Dados"/>
+    <item
+        android:id="@+id/bottom_menu_pedidos"
+        android:enabled="true"
+        android:icon="@drawable/ic_maxima_historico_pedidos_ativo"
+        android:title="Hist. Pedidos"/>
+    <item
+        android:id="@+id/bottom_menu_alvara"
+        android:enabled="true"
+        android:icon="@drawable/ic_maxima_alvara_ativo"
+        android:title="Alvarás"/>
+</menu>

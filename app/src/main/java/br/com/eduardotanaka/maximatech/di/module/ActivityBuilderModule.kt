@@ -1,6 +1,7 @@
 package br.com.eduardotanaka.maximatech.di.module
 
 import br.com.eduardotanaka.maximatech.ui.MainActivity
+import br.com.eduardotanaka.maximatech.ui.cliente.ClienteActivity
 import br.com.eduardotanaka.maximatech.ui.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -17,4 +18,6 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector
     abstract fun contributesMainActivity(): MainActivity
 
+    @ContributesAndroidInjector(modules = [FragmentModule::class])
+    abstract fun contributesClienteActivity(): ClienteActivity
 }

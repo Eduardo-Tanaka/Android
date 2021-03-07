@@ -5,9 +5,11 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
+import android.widget.Toast
 import br.com.eduardotanaka.maximatech.R
 import br.com.eduardotanaka.maximatech.databinding.ActivityMainBinding
 import br.com.eduardotanaka.maximatech.ui.base.BaseActivity
+import br.com.eduardotanaka.maximatech.ui.cliente.ClienteActivity
 
 class MainActivity : BaseActivity() {
 
@@ -32,10 +34,13 @@ class MainActivity : BaseActivity() {
             override fun onCardClicked(
                 card: Card
             ) {
-                val intent = Intent(this@MainActivity, MainActivity::class.java)
-                //intent.putExtra(ExtraKey.PRODUCT.toString(), card)
-
-                startActivity(intent)
+                when (card.title) {
+                    "Cliente" -> {
+                        val intent = Intent(this@MainActivity, ClienteActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> Toast.makeText(this@MainActivity, "Funcionalidade não implementada", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
