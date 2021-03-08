@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import br.com.eduardotanaka.maximatech.di.ViewModelFactory
 import br.com.eduardotanaka.maximatech.di.ViewModelKey
-import br.com.eduardotanaka.maximatech.ui.cliente.DadosViewModelImpl
+import br.com.eduardotanaka.maximatech.ui.cliente.dados.DadosViewModelImpl
+import br.com.eduardotanaka.maximatech.ui.cliente.pedidos.PedidoViewModelImpl
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -24,5 +25,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DadosViewModelImpl::class)
     abstract fun bindDadosActivityViewModel(dadosViewModelImpl: DadosViewModelImpl): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PedidoViewModelImpl::class)
+    abstract fun bindPedidosActivityViewModel(pedidoViewModelImpl: PedidoViewModelImpl): ViewModel
 
 }

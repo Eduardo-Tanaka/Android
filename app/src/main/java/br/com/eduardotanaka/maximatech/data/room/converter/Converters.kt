@@ -43,7 +43,19 @@ class Converters {
     }
 
     @TypeConverter
-    fun toListOfContatoss(offersListStringBuffer: String?): List<Contato>? {
+    fun toListOfContatos(offersListStringBuffer: String?): List<Contato>? {
         return Gson().fromJson(offersListStringBuffer, object : TypeToken<List<Contato>>() {}.type)
+    }
+
+    @TypeConverter
+    fun fromListOfString(offers: List<String>?): String? {
+        return offers?.let {
+            return Gson().toJson(it, object : TypeToken<List<String>>() {}.type)
+        }
+    }
+
+    @TypeConverter
+    fun toListOfString(offersListStringBuffer: String?): List<String>? {
+        return Gson().fromJson(offersListStringBuffer, object : TypeToken<List<String>>() {}.type)
     }
 }

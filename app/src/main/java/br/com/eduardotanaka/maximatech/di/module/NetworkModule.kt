@@ -3,6 +3,7 @@ package br.com.eduardotanaka.maximatech.di.module
 import br.com.eduardotanaka.maximatech.BuildConfig
 import br.com.eduardotanaka.maximatech.network.ClienteService
 import br.com.eduardotanaka.maximatech.network.HttpRequestInterceptor
+import br.com.eduardotanaka.maximatech.network.PedidoService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -69,4 +70,9 @@ class NetworkModule {
     @Provides
     fun provideClienteService(retrofit: Retrofit): ClienteService =
         retrofit.create(ClienteService::class.java)
+
+    @Singleton
+    @Provides
+    fun providePedidoService(retrofit: Retrofit): PedidoService =
+        retrofit.create(PedidoService::class.java)
 }

@@ -4,13 +4,16 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import br.com.eduardotanaka.maximatech.data.model.entity.Cliente
+import br.com.eduardotanaka.maximatech.data.model.entity.Pedido
 import br.com.eduardotanaka.maximatech.data.room.converter.Converters
 import br.com.eduardotanaka.maximatech.data.room.dao.ClienteDao
+import br.com.eduardotanaka.maximatech.data.room.dao.PedidoDao
 
 @Database(
-    version = 1,
+    version = 2,
     entities = [
-        Cliente::class
+        Cliente::class,
+        Pedido::class
     ],
     exportSchema = false
 )
@@ -18,4 +21,5 @@ import br.com.eduardotanaka.maximatech.data.room.dao.ClienteDao
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun clienteDao(): ClienteDao
+    abstract fun pedidoDao(): PedidoDao
 }

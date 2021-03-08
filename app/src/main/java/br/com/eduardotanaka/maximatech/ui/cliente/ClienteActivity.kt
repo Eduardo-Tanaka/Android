@@ -1,10 +1,13 @@
 package br.com.eduardotanaka.maximatech.ui.cliente
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.fragment.app.Fragment
 import br.com.eduardotanaka.maximatech.R
 import br.com.eduardotanaka.maximatech.databinding.ActivityClienteBinding
 import br.com.eduardotanaka.maximatech.ui.base.BaseActivity
+import br.com.eduardotanaka.maximatech.ui.cliente.dados.DadosFragment
+import br.com.eduardotanaka.maximatech.ui.cliente.pedidos.PedidoFragment
 
 class ClienteActivity : BaseActivity() {
 
@@ -63,6 +66,11 @@ class ClienteActivity : BaseActivity() {
                 else -> false
             }
         }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu, menu);
+        return true;
     }
 }

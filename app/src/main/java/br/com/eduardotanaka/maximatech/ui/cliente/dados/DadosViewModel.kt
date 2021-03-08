@@ -1,4 +1,4 @@
-package br.com.eduardotanaka.maximatech.ui.cliente
+package br.com.eduardotanaka.maximatech.ui.cliente.dados
 
 import androidx.lifecycle.LiveData
 import br.com.eduardotanaka.maximatech.data.model.entity.Cliente

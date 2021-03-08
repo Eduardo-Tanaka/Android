@@ -1,4 +1,4 @@
-package br.com.eduardotanaka.maximatech.ui.cliente
+package br.com.eduardotanaka.maximatech.ui.cliente.dados
 
 import android.os.Bundle
 import android.view.LayoutInflater

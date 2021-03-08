@@ -6,24 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp">
 
-    <androidx.cardview.widget.CardView
+    <!--<androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:cardCornerRadius="100dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/img"
+        tools:src="@drawable/ic_maxima_em_processamento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_maxima_em_processamento" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/numero_pedido_label"
@@ -115,7 +105,7 @@
         android:id="@+id/critica"
         android:layout_width="16dp"
         android:layout_height="16dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="2dp"
         app:layout_constraintStart_toEndOf="@+id/critica_label"
         app:layout_constraintTop_toBottomOf="@+id/cliente_label"

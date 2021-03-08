@@ -1,8 +1,8 @@
 package br.com.eduardotanaka.maximatech.di.module
 
 import br.com.eduardotanaka.maximatech.ui.cliente.AlvaraFragment
-import br.com.eduardotanaka.maximatech.ui.cliente.DadosFragment
-import br.com.eduardotanaka.maximatech.ui.cliente.PedidoFragment
+import br.com.eduardotanaka.maximatech.ui.cliente.dados.DadosFragment
+import br.com.eduardotanaka.maximatech.ui.cliente.pedidos.PedidoFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
