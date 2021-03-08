@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.eduardotanaka.maximatech.R
 import br.com.eduardotanaka.maximatech.databinding.FragmentClienteBinding
 import br.com.eduardotanaka.maximatech.ui.base.StatefulResource
@@ -20,7 +21,7 @@ class DadosFragment : DaggerFragment() {
     @Inject
     lateinit var factory: ViewModelProvider.Factory
     private val viewModel by viewModels<DadosViewModelImpl> { factory }
-    //private var adapter: FilmeFavoritoListAdapter? = null
+    private var adapter: ContatoAdapter? = null
 
     // Scoped to the lifecycle of the fragment's view (between onCreateView and onDestroyView)
     private var fragmentClienteBinding: FragmentClienteBinding? = null
@@ -36,22 +37,33 @@ class DadosFragment : DaggerFragment() {
         viewModel.getCliente(30987)
         viewModel.cliente.observe(viewLifecycleOwner, {
             if (it.state == StatefulResource.State.SUCCESS && it.hasData()) {
+                val cliente = it.resource?.data
+                fragmentClienteBinding?.codigo?.text =
+                    "${cliente?.codigo} - ${cliente?.razaoSocial}"
+                fragmentClienteBinding?.empresa?.text = cliente?.nomeFantasia
+                fragmentClienteBinding?.cpfNumero?.text = "id ${cliente?.id}"
+                fragmentClienteBinding?.cnpjNumero?.text = cliente?.cnpj
+                fragmentClienteBinding?.ramoDesc?.text = cliente?.ramoAtividade
+                fragmentClienteBinding?.enderecoDesc?.text = cliente?.endereco
 
+                adapter = ContatoAdapter(cliente?.contatos!!)
+                fragmentClienteBinding?.rvContatos?.layoutManager = LinearLayoutManager(context)
+                fragmentClienteBinding?.rvContatos?.adapter = adapter
+
+                fragmentClienteBinding?.btnStatus?.setOnClickListener {
+                    Snackbar.make(
+                        binding.root,
+                        snackDateTimeFormatter.format(LocalDateTime.now()) + " - Status " + cliente?.status,
+                        Snackbar.LENGTH_LONG
+                    )
+                        .setAction("FECHAR") {
+                            // Responds to click on the action
+                        }
+                        .setActionTextColor(context?.resources?.getColor(R.color.button_status)!!)
+                        .show()
+                }
             }
         })
-
-        fragmentClienteBinding!!.btnStatus.setOnClickListener {
-            Snackbar.make(
-                binding.root,
-                snackDateTimeFormatter.format(LocalDateTime.now()) + " - Status ativo",
-                Snackbar.LENGTH_LONG
-            )
-                .setAction("FECHAR") {
-                    // Responds to click on the action
-                }
-                .setActionTextColor(context?.resources?.getColor(R.color.button_status)!!)
-                .show()
-        }
 
         return binding.root
     }

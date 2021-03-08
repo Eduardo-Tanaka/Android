@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingBottom="8dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Gean Delon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/telefone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Telefone:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/telefone_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/telefone"
+        app:layout_constraintTop_toBottomOf="@+id/nome"
+        tools:text="3333-3365" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_maxima_telefone"
+        app:layout_constraintStart_toEndOf="@+id/telefone_numero"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/celular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Celular:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefone" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/celular_numero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/celular"
+        app:layout_constraintTop_toBottomOf="@+id/telefone"
+        tools:text="(62) 98888-9888" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_maxima_telefone"
+        app:layout_constraintStart_toEndOf="@+id/celular_numero"
+        app:layout_constraintTop_toBottomOf="@+id/telefone" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="E-mail:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celular" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/email_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/celular"
+        tools:text="gean.paiva@maximasistemas.com.br" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_maxima_email"
+        app:layout_constraintStart_toEndOf="@+id/email_desc"
+        app:layout_constraintTop_toBottomOf="@+id/celular" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data_nasc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Data Nasc.:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data_nasc_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/data_nasc"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:text="1992-12-11" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/conjuge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Cônjuge:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_nasc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/conjuge_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/conjuge"
+        app:layout_constraintTop_toBottomOf="@+id/data_nasc"
+        tools:text="conjuge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data_nasc_conj"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Data Nasc. Cônjuge:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conjuge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data_nasc_conj_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/data_nasc_conj"
+        app:layout_constraintTop_toBottomOf="@+id/conjuge"
+        tools:text="Dados do cliente" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tipo:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_nasc_conj" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tipo_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tipo"
+        app:layout_constraintTop_toBottomOf="@+id/data_nasc_conj"
+        tools:text="Sócio" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Time:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/time_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/tipo"
+        tools:text="Flamengo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
