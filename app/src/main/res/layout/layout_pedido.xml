@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_maxima_em_processamento" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/numero_pedido_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Nº Ped. RCA/ERP:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/numero_pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/numero_pedido_label"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="542180 / 6421800987" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/text_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="15:18" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cliente_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Cliente:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/numero_pedido_label" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/cliente_label"
+        app:layout_constraintTop_toBottomOf="@+id/numero_pedido_label"
+        tools:text="848.246 - Burger" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon2"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data"
+        tools:src="@drawable/ic_maxima_legenda_corte" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/cliente_label"
+        tools:text="Em processamento" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/critica_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crítica:"
+        android:textColor="@color/text_label"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/cliente_label" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/critica"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/critica_label"
+        app:layout_constraintTop_toBottomOf="@+id/cliente_label"
+        tools:src="@drawable/ic_maxima_aguardando_critica" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/preco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon2"
+        tools:text="R$ 617,40" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/critica" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
